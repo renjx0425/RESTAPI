@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segmented REST API Course</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            display: flex;
+            background-color: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            max-width: 1200px;
+            margin: 20px;
+        }
+        .video-section {
+            flex: 3;
+            padding: 20px;
+        }
+        .sidebar {
+            flex: 1;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-right: 1px solid #e0e0e0;
+            color: #555;
+        }
+        h1 {
+            font-size: 2em;
+            color: #333;
+            text-align: center;
+        }
+        h2 {
+            font-size: 1.2em;
+            color: #555;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 315px;
+            border: none;
+            border-radius: 8px;
+        }
+        .timestamp-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+        .timestamps {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .timestamps li {
+            margin: 10px 0;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="timestamp-title">Content</div>
+            <ul class="timestamps">
+                <li>
+                    <br><br><br>
+                    <strong>Part 1</strong>
+                    <ul>
+                        <li>00:00 - Introduction</li>
+                        <li>05:15 - API App example</li>
+                        <li>09:15 - Why an API is important</li>
+                    </ul>
+                </li>
+
+                    <br><br><br><br><br><br><br><br>
+                <li>
+
+                <li>
+                    <strong>Part 2</strong>
+                    <ul>
+                        <li>15:00 - HTTP methods</li>
+                        <li>16:45 - POST vs PUT</li>
+                        <li>20:56 - Consume the StackOverflow API</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Video Section with Segments -->
+        <div class="video-section">
+            <h1>Segmented REST API Course</h1>
+            
+            <h2>Part 1: 0:00 to 15:00</h2>
+            <iframe src="https://www.youtube.com/embed/qbLc5a9jdXo?start=0&end=900" 
+                    title="YouTube video player - Part 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            
+            <h2>Part 2: 15:00 to 27:44</h2>
+            <iframe src="https://www.youtube.com/embed/qbLc5a9jdXo?start=900&end=1664" 
+                    title="YouTube video player - Part 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+
+</body>
+</html>
