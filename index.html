@@ -104,18 +104,65 @@
         <!-- Video Section with Segments -->
         <div class="video-section">
             <h1>Segmented REST API Course</h1>
-            
+
             <h2>Part 1: 0:00 to 15:00</h2>
-            <iframe src="https://www.youtube.com/embed/qbLc5a9jdXo?start=0&end=900" 
-                    title="YouTube video player - Part 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div id="player1"></div>
             
             <h2>Part 2: 15:00 to 27:44</h2>
-            <iframe src="https://www.youtube.com/embed/qbLc5a9jdXo?start=900&end=1664" 
-                    title="YouTube video player - Part 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div id="player2"></div>
         </div>
     </div>
 
+    <!-- Load the IFrame Player API code asynchronously -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        var player1, player2;
+
+        // This function creates an <iframe> (and YouTube player)
+        function onYouTubeIframeAPIReady() {
+            player1 = new YT.Player('player1', {
+                height: '315',
+                width: '560',
+                videoId: 'qbLc5a9jdXo',
+                playerVars: { 'start': 0, 'end': 900 },
+                events: {
+                    'onStateChange': onPlayer1StateChange
+                }
+            });
+            player2 = new YT.Player('player2', {
+                height: '315',
+                width: '560',
+                videoId: 'qbLc5a9jdXo',
+                playerVars: { 'start': 900, 'end': 1664 },
+                events: {
+                    'onStateChange': onPlayer2StateChange
+                }
+            });
+        }
+
+        // Function to stop the first player at the end time
+        function onPlayer1StateChange(event) {
+            if (event.data == YT.PlayerState.PLAYING) {
+                var interval = setInterval(function() {
+                    if (player1.getCurrentTime() >= 900) {
+                        player1.stopVideo();
+                        clearInterval(interval);
+                    }
+                }, 1000);
+            }
+        }
+
+        // Function to stop the second player at the end time
+        function onPlayer2StateChange(event) {
+            if (event.data == YT.PlayerState.PLAYING) {
+                var interval = setInterval(function() {
+                    if (player2.getCurrentTime() >= 1664) {
+                        player2.stopVideo();
+                        clearInterval(interval);
+                    }
+                }, 1000);
+            }
+        }
+    </script>
 </body>
 </html>
